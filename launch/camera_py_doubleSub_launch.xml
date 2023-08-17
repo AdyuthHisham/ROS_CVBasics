@@ -1,0 +1,9 @@
+<launch>
+	<node pkg="cv_basics_cpp" exec="please_sub" name="camfeed" namespace="cpp">
+		<remap from="/cpp/video_frames" to="/video_frames"/>
+	</node>
+	<node pkg="cv_basics_py" exec="img_subscriber_py" name="camfeed" namespace="py">
+		<remap from="/py/video_frames" to="/video_frames"/>
+	</node>
+	<node pkg="cv_basics_py" exec="img_publisher_py" name="pub"/>		
+</launch>
